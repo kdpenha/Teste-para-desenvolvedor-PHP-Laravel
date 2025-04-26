@@ -12,6 +12,13 @@ $routes = [
     '/properties/edit' => ['controller' => 'PropertyController', 'method' => 'edit'],
     '/properties/update' => ['controller' => 'PropertyController', 'method' => 'update'],
     '/properties/delete' => ['controller' => 'PropertyController', 'method' => 'delete'],
+
+    '/customer-interests' => ['controller' => 'CustomerInterestsController', 'method' => 'index'],
+    '/customer-interests/create' => ['controller' => 'CustomerInterestsController', 'method' => 'create'],
+    '/customer-interests/save' => ['controller' => 'CustomerInterestsController', 'method' => 'save'],
+    '/customer-interests/edit' => ['controller' => 'CustomerInterestsController', 'method' => 'edit'],
+    '/customer-interests/update' => ['controller' => 'CustomerInterestsController', 'method' => 'update'],
+    '/customer-interests/delete' => ['controller' => 'CustomerInterestsController', 'method' => 'delete'],
 ];
 
 // Verifica se a rota existe
