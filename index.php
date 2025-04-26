@@ -7,5 +7,5 @@ loadEnv();
 
 session_start();
 
-require_once 'helpers/helpers.php';
+require_once 'helpers/Helpers.php';
 require "routes.php";
