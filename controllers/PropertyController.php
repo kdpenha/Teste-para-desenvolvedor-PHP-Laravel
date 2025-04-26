@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/../controllers/AppController.php';
 require_once __DIR__ . '/../models/PropertiesModel.php';
+require_once __DIR__ . '/../models/CustomerInterestsModel.php';
 require_once __DIR__ . '/../helpers/Validator.php';
 
 class PropertyController extends AppController
@@ -89,5 +90,21 @@ class PropertyController extends AppController
         (new PropertiesModel())->delete($id);
         header('Location: /properties');
         exit;
+    }
+
+    public function recommend()
+    {
+        $title = 'Recomendar Imóvel';
+
+        if (!isset($_GET['interestId']) && !isset($_POST['interestId'])) {
+            header('Location: /properties');
+            exit;
+        }
+
+        $interestId = $_GET['interestId'] ?? $_POST['interestId'];
+
+        $interest = (new CustomerInterestsModel())->getById($interestId);
+        $properties = (new PropertiesModel())->getPropertiesForInterest($interest);
+        require 'views/Properties/recommend.php';
     }
 }
