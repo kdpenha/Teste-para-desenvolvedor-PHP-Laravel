@@ -6,7 +6,7 @@
                 <i class="bi bi-house-door me-2"></i> Gerenciar Imóveis
             </a>
             <a href="<?= route('/customer-interests') ?>" class="btn btn-success btn-lg">
-                <i class="bi bi-people me-2"></i> Gerenciar Interesses
+                <i class="bi bi-people me-2"></i> Gerenciar Interesses de Clientes
             </a>
         </div>
     </div>

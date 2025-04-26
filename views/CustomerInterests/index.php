@@ -34,7 +34,8 @@
                         <td><?= !empty($customerInterest['number_min_of_rooms']) ? htmlspecialchars($customerInterest['number_min_of_rooms']) : '-' ?></td>
                         <td><?= !empty($customerInterest['desired_neighborhoods']) ? htmlspecialchars(str_replace(['[',']','"'],'', $customerInterest['desired_neighborhoods'])) : '-' ?></td>
                         <td>
-                            <a href="<?= route('/customer-interests/edit', ['id' => $customerInterest['id']]) ?>" class="btn btn-warning btn-sm">Editar</a>
+                            <a href="<?= route('/customer-interests/edit', ['id' => $customerInterest['id']]) ?>" class="btn btn-info btn-sm">Editar</a>
+                            <a href="<?= route('/properties/recommend', ['interestId' => $customerInterest['id']]) ?>" class="btn btn-warning btn-sm">Recomendações</a>
                             <a href="/customer-interests/delete?id=<?= $customerInterest['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja excluir?')">Excluir</a>
                         </td>
                     </tr>

@@ -9,7 +9,25 @@
     <link href="/public/css/style.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container container-maior mt-5">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/home">CRM Imóveis</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+            <a class="nav-link" href="<?= route('/properties') ?>">Imóveis</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="<?= route('/customer-interests') ?>">Interesses</a>
+            </li>
+        </ul>
+        </div>
+    </div>
+</nav>
+    <div class="container-fluid mt-3">
         <?= $content ?? "" ?>
     </div>
 
