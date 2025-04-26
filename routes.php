@@ -12,6 +12,7 @@ $routes = [
     '/properties/edit' => ['controller' => 'PropertyController', 'method' => 'edit'],
     '/properties/update' => ['controller' => 'PropertyController', 'method' => 'update'],
     '/properties/delete' => ['controller' => 'PropertyController', 'method' => 'delete'],
+    '/properties/recommend' => ['controller' => 'PropertyController', 'method' => 'recommend'],
 
     '/customer-interests' => ['controller' => 'CustomerInterestsController', 'method' => 'index'],
     '/customer-interests/create' => ['controller' => 'CustomerInterestsController', 'method' => 'create'],
