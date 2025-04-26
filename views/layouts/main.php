@@ -9,7 +9,7 @@
     <link href="/public/css/style.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container mt-5">
+    <div class="container container-maior mt-5">
         <?= $content ?? "" ?>
     </div>
 

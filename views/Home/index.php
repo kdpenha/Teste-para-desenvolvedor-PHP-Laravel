@@ -5,7 +5,7 @@
             <a href="<?= route('/properties') ?>" class="btn btn-primary btn-lg">
                 <i class="bi bi-house-door me-2"></i> Gerenciar Imóveis
             </a>
-            <a href="#" class="btn btn-success btn-lg">
+            <a href="<?= route('/customer-interests') ?>" class="btn btn-success btn-lg">
                 <i class="bi bi-people me-2"></i> Gerenciar Interesses
             </a>
         </div>
