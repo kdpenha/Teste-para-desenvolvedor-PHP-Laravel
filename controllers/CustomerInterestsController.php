@@ -38,10 +38,11 @@ class CustomerInterestsController extends AppController
                 }
                 return trim($item) !== '';
             });
-            $data['desired_neighborhoods'] = json_encode($data['desired_neighborhoods']);
+            $data['desired_neighborhoods'] = json_encode($data['desired_neighborhoods']) ?? null;
         
-            (new CustomerInterestsModel())->save($data);
-            header('Location: /customer-interests');
+            $interestId = (new CustomerInterestsModel())->save($data);
+
+            header('Location: /properties/recommend?interestId=' . $interestId);
             exit;
         }
         
@@ -86,10 +87,14 @@ class CustomerInterestsController extends AppController
                 }
                 return trim($item) !== '';
             });
-            $data['desired_neighborhoods'] = json_encode($data['desired_neighborhoods']);
+            $data['property_price_min'] = $data['property_price_min'] ?? null;
+            $data['property_price_max'] = $data['property_price_max'] ?? null;
+            $data['number_min_of_rooms'] = $data['number_min_of_rooms'] ?? null;
+            $data['desired_neighborhoods'] = json_encode($data['desired_neighborhoods']) ?? null;
             
-            (new CustomerInterestsModel())->update($data['id'], $data);
-            header('Location: /customer-interests');
+            (new CustomerInterestsModel())->update($_POST['id'], $data);
+
+            header('Location: /properties/recommend?interestId=' . $data['id']);
             exit;
         }
     }
