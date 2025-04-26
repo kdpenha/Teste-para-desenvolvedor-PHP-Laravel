@@ -68,7 +68,12 @@
     <div class="mb-3">
     <label for="neighborhoods">Selecione os bairros:</label>
         <?php foreach ($neighborhoods as $neighborhood): 
-            $checked = (isset($customerInterest['desired_neighborhoods']) && in_array($neighborhood, json_decode($customerInterest['desired_neighborhoods']))) ? 'checked' : '';    
+            $desiredNeighborhoods = isset($customerInterest['desired_neighborhoods']) ? json_decode($customerInterest['desired_neighborhoods']) : [];
+            if (!empty($desiredNeighborhoods)) {
+                $checked = in_array($neighborhood, $desiredNeighborhoods) ? 'checked' : '';
+            } else {
+                $checked = '';
+            }
         ?>
         <div class="form-check">
             <input <?= $checked ?> class="form-check-input" type="checkbox" name="desired_neighborhoods[]" value="<?= $neighborhood ?>" id="<?= str_replace(' ', '', $neighborhood) ?>">
