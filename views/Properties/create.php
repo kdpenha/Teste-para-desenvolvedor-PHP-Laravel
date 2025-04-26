@@ -32,7 +32,7 @@
     ?>
     <div class="mb-3">
         <label for="name" class="form-label">Nome do Imóvel</label>
-        <input type="text" class="form-control" id="name" name="name" required value="<?= $id ? $property['name'] : '' ?>">
+        <input type="text" class="form-control" id="name" name="name" required value="<?= !empty($id) ? $property['name'] : '' ?>">
     </div>
 
     <div class="mb-3">
@@ -57,12 +57,12 @@
 
     <div class="mb-3">
         <label for="number_of_rooms" class="form-label">Número de Quartos</label>
-        <input type="number" class="form-control" id="number_of_rooms" name="number_of_rooms" min="0" required value="<?= $id ? $property['number_of_rooms'] : '' ?>">
+        <input type="number" class="form-control" id="number_of_rooms" name="number_of_rooms" min="0" required value="<?= !empty($id) ? $property['number_of_rooms'] : '' ?>">
     </div>
 
     <div class="mb-3">
         <label for="price" class="form-label">Preço</label>
-        <input type="number" step="0.01" class="form-control" id="price" name="price" required value="<?= $id ? $property['price'] : '' ?>">
+        <input type="number" step="0.01" class="form-control" id="price" name="price" required value="<?= !empty($id) ? $property['price'] : '' ?>">
     </div>
 
     <button type="submit" class="btn btn-success">Salvar Imóvel</button>
