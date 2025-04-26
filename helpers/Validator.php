@@ -30,4 +30,27 @@ class Validator
 
         return $errors;
     }
+
+    public static function validateCustomerInterest($data, $neighborhoods, $propertyTypes)
+    {
+        $errors = [];
+
+        if (empty(trim($data['name'] ?? ''))) {
+            $errors[] = "Nome é obrigatório.";
+        }
+
+        if (empty(trim($data['phone'] ?? ''))) {
+            $errors[] = "Telefone é obrigatório.";
+        }
+
+        if (empty($data['desired_property_type']) || !in_array($data['desired_property_type'], $propertyTypes)) {
+            $errors[] = "Tipo de imóvel é obrigatório.";
+        }
+        
+        if (empty(trim($data['property_price_min'] ?? '')) && empty(trim($data['property_price_max'] ?? ''))) {
+            $errors[] = "Pelo menos um preço de imóvel (max ou min) é obrigatório.";
+        }
+
+        return $errors;
+    }
 }
